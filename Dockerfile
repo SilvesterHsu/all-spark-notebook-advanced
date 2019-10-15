@@ -22,7 +22,8 @@ RUN pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator a
     jupyter nbextension enable varInspector/main && \
     jupyter nbextension enable snippets_menu/main && \
     jupyter nbextension enable code_prettify/autopep8 && \
-    jupyter nbextension enable toggle_all_line_numbers/main
+    jupyter nbextension enable toggle_all_line_numbers/main && \
+    jupyter nbextension enable latex_envs/latex_envs
 
 EXPOSE 8888
 RUN mkdir /notebooks
