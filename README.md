@@ -6,7 +6,7 @@ For more details,
 
 Github: [link](https://github.com/SilvesterHsu/docker-stacks-advanced)
 
-Docker: [link](https://cloud.docker.com/repository/docker/silvesterhsu/https://cloud.docker.com/repository/registry-1.docker.io/silvesterhsu/stacks-advanced)
+Docker: [link](https://hub.docker.com/r/silvesterhsu/stacks-advanced)
 
 # How to run it?
 
