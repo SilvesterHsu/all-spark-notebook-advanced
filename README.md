@@ -1,6 +1,6 @@
 # docker-stacks-advanced
 
-This is a Dockerfile that JupyterLab automatically builds Docker images.
+This is a Dockerfile that Jupyter Notebook automatically builds Docker images.
 
 # Why build it?
 
