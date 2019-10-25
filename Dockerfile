@@ -30,4 +30,4 @@ RUN mkdir /notebooks
 WORKDIR "/notebooks"
 VOLUME ["/notebooks"]
 
-CMD ["/bin/bash", "-c", "jupyter notebook --ip=0.0.0.0 --allow-root"]
+CMD ["/bin/zsh", "-c", "jupyter notebook --ip=0.0.0.0 --allow-root"]
