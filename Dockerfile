@@ -23,11 +23,12 @@ RUN pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator a
     jupyter nbextension enable snippets_menu/main && \
     jupyter nbextension enable code_prettify/autopep8 && \
     jupyter nbextension enable toggle_all_line_numbers/main && \
-    jupyter nbextension enable latex_envs/latex_envs
+    jupyter nbextension enable latex_envs/latex_envs && \
+    echo "c.NotebookApp.terminado_settings = {'shell_command': ['/bin/zsh']}" >> ~/.jupyter/jupyter_notebook_config.py
 
 EXPOSE 8888
 RUN mkdir /notebooks
 WORKDIR "/notebooks"
 VOLUME ["/notebooks"]
 
-CMD ["/bin/zsh", "-c", "jupyter notebook --ip=0.0.0.0 --allow-root"]
+CMD ["/bin/bash", "-c", "jupyter notebook --ip=0.0.0.0 --allow-root"]
