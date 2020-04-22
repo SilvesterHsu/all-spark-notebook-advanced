@@ -17,7 +17,7 @@ Github: [link](https://github.com/SilvesterHsu/docker-stacks-advanced)
 Docker: [link](https://hub.docker.com/r/silvesterhsu/stacks-advanced)
 
 # How to run it?
-
+Run *Jupyter Notebook* by default. 
 ```
 docker run -it --name stacks --restart=always -p "$PORT":8888 -v "$PWD":/notebooks silvesterhsu/stacks-advanced:"$TAG"
 ```
@@ -28,10 +28,14 @@ docker run -it --name stacks --restart=always -p "$PORT":8888 -v "$PWD":/noteboo
 
 `$TAG`: For the time being, only `latest`, if not filled in, the latest version is downloaded by default. The ARM version may be available in the future.
 
+However,  *Jupyter Lab* support **debug** now !!!
+
+Set the `$TAG` to `lab`
+
 **Example:**
 
 ```
-docker run -it --name stacks --restart=always -p 8888:8888 -v ~/new_project:/notebooks silvesterhsu/stacks-advanced
+docker run -it --name stacks --restart=always -p 8888:8888 -v ~/new_project:/notebooks silvesterhsu/stacks-advanced:lab
 ```
 
 ## Set password

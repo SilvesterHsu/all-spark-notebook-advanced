@@ -13,8 +13,11 @@ RUN apt update && \
     rm -rf rm -rf /var/lib/apt/lists/*
 
 # install notebook extensions
-RUN pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator autopep8 notebook==5.7.8 && \
+RUN pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator autopep8 notebook && \
     pip install torch==1.3.1+cpu torchvision==0.4.2+cpu -f https://download.pytorch.org/whl/torch_stable.html && \
+    conda install -c conda-forge jupyterlab xeus-python && \
+    jupyter labextension enable && \
+    jupyter labextension install @jupyterlab/debugger @jupyterlab/toc && \
     jupyter contrib nbextension install --user && \
     jupyter nbextensions_configurator enable --user && \
     jupyter nbextension enable splitcell/splitcell && \
@@ -32,4 +35,4 @@ RUN mkdir /notebooks
 WORKDIR "/notebooks"
 VOLUME ["/notebooks"]
 
-CMD ["/bin/bash", "-c", "jupyter notebook --ip=0.0.0.0 --allow-root"]
+CMD ["/bin/bash", "-c", "jupyter lab --ip=0.0.0.0 --allow-root"]
