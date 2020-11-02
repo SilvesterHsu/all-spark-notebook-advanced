@@ -14,10 +14,10 @@ RUN apt update && \
 
 # install notebook extensions
 RUN pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator autopep8 notebook && \
-    pip install torch==1.3.1+cpu torchvision==0.4.2+cpu -f https://download.pytorch.org/whl/torch_stable.html && \
+    #pip install torch==1.3.1+cpu torchvision==0.4.2+cpu -f https://download.pytorch.org/whl/torch_stable.html && \
     conda install -c conda-forge jupyterlab xeus-python && \
     jupyter labextension enable && \
-    jupyter labextension install @jupyterlab/debugger @jupyterlab/toc && \
+    jupyter labextension install @jupyterlab/debugger @jupyterlab/toc @lckr/jupyterlab_variableinspector jupyterlab-execute-time && \
     jupyter contrib nbextension install --user && \
     jupyter nbextensions_configurator enable --user && \
     jupyter nbextension enable splitcell/splitcell && \
