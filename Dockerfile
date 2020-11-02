@@ -1,4 +1,4 @@
-FROM jupyter/all-spark-notebook
+FROM jupyter/all-spark-notebook:54462805efcb
 
 USER root
 
