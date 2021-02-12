@@ -66,9 +66,9 @@ RUN apt update && \
 
 # install notebook extensions
 RUN pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator autopep8 notebook && \
-    conda install -c conda-forge xeus-python && \
+    conda install -c conda-forge xeus-python jupyterlab_execute_time && \
     jupyter labextension enable && \
-    jupyter labextension install @jupyterlab/debugger @jupyterlab/toc @lckr/jupyterlab_variableinspector jupyterlab-execute-time && \
+    jupyter labextension install @jupyterlab/debugger @jupyterlab/toc @lckr/jupyterlab_variableinspector && \
     jupyter contrib nbextension install --user && \
     jupyter nbextensions_configurator enable --user && \
     jupyter nbextension enable splitcell/splitcell && \
