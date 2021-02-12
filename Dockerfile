@@ -1,4 +1,4 @@
-FROM jupyter/all-spark-notebook:ubuntu-18.04
+FROM jupyter/all-spark-notebook
 
 USER root
 
@@ -66,7 +66,7 @@ RUN apt update && \
 
 # install notebook extensions
 RUN pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator autopep8 notebook && \
-    conda install -c conda-forge jupyterlab xeus-python && \
+    conda install -c conda-forge xeus-python && \
     jupyter labextension enable && \
     jupyter labextension install @jupyterlab/debugger @jupyterlab/toc @lckr/jupyterlab_variableinspector jupyterlab-execute-time && \
     jupyter contrib nbextension install --user && \
